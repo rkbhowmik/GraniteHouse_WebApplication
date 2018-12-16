@@ -53,7 +53,7 @@ namespace GraniteHouse_WebShop.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var productType = await _db.SpecialTags.FindAsync(id);
+            var productType = await _db.ProductTypes.FindAsync(id);
             if (productType == null)
             {
                 return NotFound();
@@ -89,7 +89,7 @@ namespace GraniteHouse_WebShop.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var productType = await _db.SpecialTags.FindAsync(id);
+            var productType = await _db.ProductTypes.FindAsync(id);
             if (productType == null)
             {
                 return NotFound();
@@ -106,7 +106,7 @@ namespace GraniteHouse_WebShop.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var productType = await _db.SpecialTags.FindAsync(id);
+            var productType = await _db.ProductTypes.FindAsync(id);
             if (productType == null)
             {
                 return NotFound();
@@ -120,8 +120,8 @@ namespace GraniteHouse_WebShop.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            var productTypes = await _db.SpecialTags.FindAsync(id);
-            _db.SpecialTags.Remove(productTypes);
+            var productTypes = await _db.ProductTypes.FindAsync(id);
+            _db.ProductTypes.Remove(productTypes);
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
