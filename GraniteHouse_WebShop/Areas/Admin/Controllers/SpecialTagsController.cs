@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GraniteHouse_WebShop.Data;
+using GraniteHouse_WebShop.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GraniteHouse_WebShop.Areas.Admin.Controllers
@@ -26,10 +27,20 @@ namespace GraniteHouse_WebShop.Areas.Admin.Controllers
         {
             return View();
         }
-
+        // Post Create Action Method
         [HttpPost]
         [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(SpecialTags specialTags)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Add(specialTags);
+                await _db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
 
+            return View(specialTags);
+        }
 
 
 
