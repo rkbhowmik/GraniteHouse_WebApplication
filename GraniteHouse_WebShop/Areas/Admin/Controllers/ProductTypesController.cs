@@ -21,7 +21,7 @@ namespace GraniteHouse_WebShop.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-            return View(_db.SpecialTags.ToList());
+            return View(_db.ProductTypes.ToList());
         }
 
         // GET Create Action Method
