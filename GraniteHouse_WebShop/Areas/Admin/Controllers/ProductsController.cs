@@ -10,12 +10,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GraniteHouse_WebShop.Controllers
 {
+    [Area("Admin")]
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _db;
 
         [BindProperty]
-        public ProductsVM ProductsVM { get; set; } 
+        public ProductsVM ProductsVM { get; set; }
         public ProductsController(ApplicationDbContext db)
         {
             _db = db;
