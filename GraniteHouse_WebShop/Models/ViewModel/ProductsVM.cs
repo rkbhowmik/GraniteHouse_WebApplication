@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GraniteHouse_WebShop.Models.ViewModel
 {
-    public class ProductVM
+    public class ProductsVM
     {
         public Products Products { get; set; }
 
